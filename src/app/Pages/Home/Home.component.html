@@ -1,0 +1,49 @@
+<div class="header">
+    <div class="logo-search">
+        <div class="logo">
+            <img src="assets/LOGO2.png" alt="Comics Universe Logo">
+        </div>
+        <h1 class="title">BLINX COMICS</h1>
+        
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a routerLink="/">Ver Comics</a></li>
+            <li><a routerLink="/Reseña">Ver Reseñas</a></li>
+            <li><a routerLink="/Comics">Administrar Comics</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="main-content">
+    <!-- Sección: COMICS DE ASOMBRO -->
+    <div class="section">
+        <h2>COMICS DE ASOMBRO</h2>
+        <div class="comics-section my-comics">
+            <div *ngFor="let comic of personalComics" class="comic">
+                <div class="tag">{{ comic.editorial }}</div>
+                <img [src]="comic.imagen_url" [alt]="comic.titulo" />
+                <h3>{{ comic.titulo }}</h3>
+                <p>{{ comic.descripcion }}</p>
+                <small>Publicado el: {{ comic.fecha_publicacion | date }}</small>
+                <p><strong>Precio:</strong> {{ comic.precio | currency }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección: COMICS AMIGABLES -->
+    <div class="section">
+        <h2>COMICS AMIGABLES</h2>
+        <div class="comics-section friendly-comics">
+            <div *ngFor="let comic of publicComics" class="comic">
+                <div class="tag">COMIC</div>
+                <img [src]="comic.image?.small_url" alt="{{ comic.name }}">
+                <h3>{{ comic.name }}</h3>
+                <p><strong>Precio:</strong> {{ comic.price | currency }}</p>
+            </div>
+            <ng-template #noComics>
+                <p>No comics available</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="header">
+    <div class="logo-search">
+        <div class="logo">
+            <img src="assets/LOGO2.png" alt="Comics Universe Logo">
+        </div>
+        <h1 class="title">BLINX COMICS</h1>
+       
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a routerLink="/">Ver Comics</a></li>
+            <li><a routerLink="/Reseña">Ver Reseñas</a></li>
+            <li><a routerLink="/Comics">Administrar Comics</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="main-content">
+    <div class="section">
+        <h2>
+            RESEÑAS
+            <button class="add-review-btn" (click)="createResena()">Agregar Reseña</button>
+        </h2>
+        <div class="reviews-section">
+            <div *ngFor="let resena of resenas" class="review">
+                <div class="review-content">
+                    <p><strong>Usuario:</strong> {{ resena.usuario }}</p>
+                    <p><strong>Calificación:</strong> {{ resena.calificacion }}</p>
+                    <p><strong>Contenido:</strong> {{ resena.contenido }}</p>
+                    <div class="card-buttons">
+                        <button class="delete-btn" (click)="deleteResena(resena.id)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

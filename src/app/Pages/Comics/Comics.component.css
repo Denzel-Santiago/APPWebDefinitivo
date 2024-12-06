@@ -1,0 +1,322 @@
+/* General Styles */
+
+/* Header Styles */
+.header {
+    background-color: #ffcc00;
+    padding: 20px 20px;
+}
+
+.logo-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    height: 150px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #0c06bb;
+    margin: 0 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Menu Styles */
+.menu {
+    background-color: #e5ac00;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 50px;
+    background-color: black;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.comics-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    padding: 15px;
+    animation: border-glow 1.5s infinite alternate;
+}
+
+.comics-section.my-comics {
+    border-color: #ff4500;
+}
+
+.comics-section.public-comics {
+    border-color: #00bfff;
+}
+
+.comic {
+    background-color: #cdcdcd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.comic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.comic .tag {
+    background-color: #007bff;
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.comic img {
+    max-width: 85%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.comic h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.comic p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Animations */
+@keyframes border-glow {
+    from {
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 1);
+    }
+}
+
+.comics-section.friendly-comics {
+    border-color: #00ff7f;
+}
+
+/* From Uiverse.io by OnCloud125252 */ 
+/* Note that you only needs to edit the config to customize the button! */
+
+.plusButton {
+    /* Config start */
+    --plus_sideLength: 3.5rem;
+    --plus_topRightTriangleSideLength: 1.2rem;
+    /* Config end */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: var(--plus_sideLength);
+    height: var(--plus_sideLength);
+    background-color: #f7f7f7;
+    overflow: hidden;
+  }
+  
+  .plusButton::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+    border-style: solid;
+    border-color: transparent rgb(12, 8, 227) transparent transparent;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+  }
+  
+  .plusButton:hover {
+    cursor: pointer;
+  }
+  
+  .plusButton:hover::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+  }
+  
+  .plusButton:focus-visible::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+  }
+  
+  .plusButton>.plusIcon {
+    fill: white;
+    width: calc(var(--plus_sideLength) * 0.7);
+    height: calc(var(--plus_sideLength) * 0.7);
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+  }
+  
+  .plusButton:hover>.plusIcon {
+    fill: rgb(255, 255, 255);
+    transform: rotate(180deg);
+  }
+  
+  .plusButton:focus-visible>.plusIcon {
+    fill: rgb(255, 255, 255);
+    transform: rotate(180deg);
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #1a1a1a; /* Fondo negro */
+    color: white; /* Texto blanco */
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px; /* Tamaño adecuado */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* Tamaño de título adecuado */
+    color: #ffffff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem; /* Tamaño pequeño */
+    color: #cccccc;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #333333; /* Fondo oscuro para los inputs */
+    border: 1px solid #555555; /* Bordes grises */
+    border-radius: 5px;
+    color: white; /* Texto blanco */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .modal-save-btn,
+  .modal-cancel-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-save-btn {
+    background-color: #007bff; /* Botón azul */
+    color: white;
+  }
+  
+  .modal-cancel-btn {
+    background-color: #333; /* Botón negro */
+    color: white;
+  }
+  
+  .modal-save-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .modal-cancel-btn:hover {
+    background-color: #555;
+  }
+  
